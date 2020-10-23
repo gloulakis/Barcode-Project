@@ -45,17 +45,10 @@ public class OrderCodeList {
             int count=0;
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url = "jdbc:sqlserver://192.168.21.3;databaseName=bers;user=sa;password=q2w3e4r%";
+                String url = "jdbc:";
                 Connection con = DriverManager.getConnection(url);
                 Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("SELECT Distinct (order_code)\n" +
-                                                    "FROM V_TASK\n" +
-                                                    "WHERE order_code is not null\n" +
-                                                    "AND depositorid = 215\n" +
-                                                    "AND Status ='Нова'\n" +
-                                                    "AND DATEPART(YEAR,createdon) = DATEPART(YEAR,GETDATE())\n" +
-                                                    "AND DATEPART(MONTH,createdon) = DATEPART(MONTH,GETDATE())\n" +
-                                                    "AND DATEPART(DAY,createdon) = DATEPART(DAY,GETDATE())");
+                ResultSet rs = st.executeQuery("SELECT ");
                 while(rs.next()){
                    myList.add(rs.getString(1));
                 }
@@ -83,19 +76,12 @@ public class OrderCodeList {
          
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url = "jdbc:sqlserver://192.168.21.3;databaseName=bers;user=sa;password=q2w3e4r%";
+                String url = "jdbc:sqlserver://;databaseName=;user=;password=";
 
                 Connection con = DriverManager.getConnection(url);
                 Statement st = con.createStatement();
 
-                ResultSet rs = st.executeQuery("SELECT Distinct (order_code)\n" +
-                                                    "FROM V_TASK\n" +
-                                                    "WHERE order_code is not null\n" +
-                                                    "AND depositorid = 215\n" +
-                                                    "AND Status ='Нова'\n" +
-                                                    "AND DATEPART(YEAR,createdon) = DATEPART(YEAR,GETDATE())\n" +
-                                                    "AND DATEPART(MONTH,createdon) = DATEPART(MONTH,GETDATE())\n" +
-                                                    "AND DATEPART(DAY,createdon) = DATEPART(DAY,GETDATE())");
+                ResultSet rs = st.executeQuery("");
                 while(rs.next()){
                    list.add(rs.getString(1));
                 }
