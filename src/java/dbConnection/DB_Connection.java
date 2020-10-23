@@ -44,12 +44,7 @@ public class DB_Connection {
             List<String> orderList = new ArrayList<String>();
         try {
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT Distinct (order_code)\n" +
-                    "FROM V_TASK\n" +
-                    "WHERE order_code is not null \n" +
-                    "AND Type = 'Picking'\n" +
-                    "AND Status ='Нова'\n" +
-                    "AND depositorid = 215");
+            ResultSet rs = st.executeQuery("SELECT ......");
              while(rs.next()){
               orderList.add(rs.getString(1));
             }
@@ -63,7 +58,7 @@ public class DB_Connection {
             Connection connection = null;
             try{
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                connection = DriverManager.getConnection("jdbc:sqlserver://192.168.21.3;databaseName=bers;user=sa;password=q2w3e4r%");
+                connection = DriverManager.getConnection("jdbc:sqlserver://;databaseName=;user=;password=");
             } catch (ClassNotFoundException ex) {
             Logger.getLogger(DB_Connection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
